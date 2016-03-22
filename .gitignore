@@ -1,0 +1,6 @@
+*.pyc
+.twarc
+feeds/
+test_crawls/
+feeds.txt
+feeds_test.txt

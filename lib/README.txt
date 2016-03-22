@@ -1,0 +1,7 @@
+Archived Twitter data was captured using twarc, a Python library developed by Ed Summers that uses the Twitter API to archive Twitter JSON data. For more information on twarc, visit the project's GitHub page: https://github.com/edsu/twarc
+
+The raw data captured by twarc can be found in the 'json' directory. The JSON files were converted to HTML pages for ease of use; converted pages can be found in the 'html' directory. A good starting point for using this collection of archived Twitter data is the index.html file, located in the collection's root directory, which contains a table of HTML and JSON files for each capture date represented in this collection.
+
+Twitter user profile images and tweeted images were downloaded for long-term preservation and use and can be found in the 'media' directory. URLs in the converted HTML documents were updated to point to the downloaded content. A spreadsheet containing original image URLs and download locations can be found in the 'media' directory.
+
+The Bentley Historical Library makes this content available to University of Michigan affiliates for personal research and scholarship. The content is not intended for distribution to third parties.  Refer to the Twitter API Terms of Service for policies regarding the distribution and use of Twitter data: https://dev.twitter.com/overview/terms/agreement-and-policy
