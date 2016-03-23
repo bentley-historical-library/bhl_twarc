@@ -11,7 +11,7 @@ Bentley Historical Library's implementation of [twarc](https://github.com/edsu/t
 * `cd bhl_twarc`
 * Create a configuration file called `feeds.txt`
 * Entries in the configuration file should look like this:
-	
+```
     [examplehashtag]
     crawl:True
     name:Example Hashtag (#examplehashtag)
@@ -23,7 +23,7 @@ Bentley Historical Library's implementation of [twarc](https://github.com/edsu/t
     name: Example Mentions (@examplementions)
     crawl_type:mentions
     search_string:@examplementions
-
+```
 ## Twitter API Set Up
 * Create an application at [apps.twitter.com](http://apps.twitter.com)
 * Note the consumer key, consumer secret, access token, and access token secret associated with the application
@@ -32,7 +32,7 @@ Bentley Historical Library's implementation of [twarc](https://github.com/edsu/t
 * Run `bhl_twarc.py`
 * The script will parse entries in `feeds.txt` and initiate a Twitter search for all that have a `crawl` setting of `True`
 * `bhl_twarc` will create the following directory structure (using the example configuration above as an example), if it does not exist:
-	
+```	
     feeds
       examplehashtag
         html
@@ -41,6 +41,7 @@ Bentley Historical Library's implementation of [twarc](https://github.com/edsu/t
         media
           profile_images
           tweet_images
+```
 
 * The raw JSON returned by the Twitter API will be saved to the feed's `json` directory
 * Logs for the API search will be stored to a `twarc.log` file in the `logs` directory
@@ -59,14 +60,14 @@ The first time `bhl_twarc.py` is run, it will prompt you for your consumer key, 
 ### Options
 Several command line arguments can be passed to `bhl_twarc.py`. 
 * To perform a search of a particular feed:
-
+```
     bhl_twarc.py -f examplehashtag
-
+```
 * To exclude feeds from a crawl:
-
+```
     bhl_twarc.py -e examplehashtag
-
+```
 * To run a test crawl, using a configuration file called `feeds_test.txt`, the results of which will be saved to a directory called `test_crawls`
-
+```
     bhl_twarc.py -t
-
+```
