@@ -24,8 +24,6 @@ def load_credentials(credentials_file):
     if os.path.exists(credentials_file):
         credentials = ConfigParser.ConfigParser()
         credentials.read(credentials_file)
-        #return credentials
-        #return make_credentials_dict(credentials)
     else:
         print("Please enter Twitter authentication credentials")
         consumer_key = raw_input('consumer key: ')
