@@ -1,0 +1,5 @@
+[onetoughnerd]
+crawl:True
+name:Rick Snyder (@onetoughnerd)
+crawl_type:mentions
+search_string:@onetoughnerd

@@ -11,6 +11,8 @@ from scripts.credentials import load_credentials
 from scripts.extract_urls import extract_urls
 from scripts.fetch_media import fetch_media
 
+# A lot of code heavily adapted from https://github.com/edsu/twarc
+
 root_dir = os.getcwd()
 parser = argparse.ArgumentParser()
 parser.add_argument('-f','--feed', default='all', help='Specify which feed to crawl')

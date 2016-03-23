@@ -4,6 +4,7 @@ import os
 from os.path import join
 import re
 
+# Heavily adapted from https://github.com/edsu/twarc/blob/master/utils/wall.py
 
 def build_html_for_feed(feed_dict):
 	feed_dir = feed_dict['feed_dir']
