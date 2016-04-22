@@ -13,7 +13,8 @@ from scripts.fetch_media import fetch_media
 
 # A lot of code heavily adapted from https://github.com/edsu/twarc
 
-root_dir = os.getcwd()
+root_dir = os.path.dirname(os.path.abspath(__file__))
+
 parser = argparse.ArgumentParser()
 parser.add_argument('-f','--feed', default='all', help='Specify which feed to crawl')
 parser.add_argument('-e','--exclude',nargs="*",help='Specify which feeds to exclude from a crawl')
@@ -42,4 +43,5 @@ extract_urls(crawled_feeds)
 build_html(crawled_feeds)
 build_index(crawled_feeds)
 fetch_media(crawled_feeds)
+
 
