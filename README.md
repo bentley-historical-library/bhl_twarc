@@ -56,7 +56,7 @@ feeds
 
 
 ### First time use
-The first time `bhl_twarc.py` is run, it will prompt you for your consumer key, consumer secret, access token, and access token secret, which will then be stored in a file called `.twarc`
+The first time `bhl_twarc.py` is run, it will prompt you for your consumer key, consumer secret, access token, and access token secret, which will then be stored in a file called `.twarc` **This file is ignored by default in this repo's .gitignore. Make sure not to commit this file to GitHub as it will contain your Twitter API secret keys**
 
 ### Options
 The following command line arguments can be passed to `bhl_twarc.py`. 
