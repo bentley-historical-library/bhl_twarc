@@ -16,22 +16,22 @@ from scripts.fetch_media import fetch_media
 root_dir = os.path.dirname(os.path.abspath(__file__))
 
 parser = argparse.ArgumentParser()
-parser.add_argument('-f','--feed', default='all', help='Specify which feed to crawl')
-parser.add_argument('-e','--exclude',nargs="*",help='Specify which feeds to exclude from a crawl')
-parser.add_argument('-t','--test',action="store_true",help="Run the script using test config")
+parser.add_argument('-f', '--feed', default='all', help='Specify which feed to crawl')
+parser.add_argument('-e', '--exclude', nargs="*", help='Specify which feeds to exclude from a crawl')
+parser.add_argument('-t', '--test', action="store_true", help="Run the script using test config")
 args = parser.parse_args()
 
 if args.test:
-	feeds_dir = join(root_dir, 'test_crawls')
-	config_file = join(root_dir, 'feeds_test.txt')
+    feeds_dir = join(root_dir, 'test_crawls')
+    config_file = join(root_dir, 'feeds_test.txt')
 else:
-	feeds_dir = join(root_dir, 'feeds')
-	config_file = join(root_dir, 'feeds.txt')
+    feeds_dir = join(root_dir, 'feeds')
+    config_file = join(root_dir, 'feeds.txt')
 
 if not os.path.exists(feeds_dir):
-	os.makedirs(feeds_dir)
+    os.makedirs(feeds_dir)
 
-readme_file = join(root_dir, 'lib','README.txt')
+readme_file = join(root_dir, 'lib', 'README.txt')
 credentials_file = join(root_dir, '.twarc')
 
 credentials = load_credentials(credentials_file)
@@ -43,5 +43,3 @@ extract_urls(crawled_feeds)
 build_html(crawled_feeds)
 build_index(crawled_feeds)
 fetch_media(crawled_feeds)
-
-

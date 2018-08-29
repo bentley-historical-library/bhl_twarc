@@ -2,9 +2,8 @@
 Bentley Historical Library's implementation of [twarc](https://github.com/edsu/twarc), used to capture searches of hashtags and mentions using the Twitter API
 
 ## Requirements
-* [Python 2.7](https://www.python.org/)
-* [twarc](https://github.com/edsu/twarc)
-* [requests](http://docs.python-requests.org/en/master/)
+* [Python 3](https://www.python.org/)
+* [twarc](https://github.com/docnow/twarc)
 
 ## BHL TWARC Set Up
 * Clone the repository
