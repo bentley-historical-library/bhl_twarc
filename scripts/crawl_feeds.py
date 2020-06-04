@@ -44,20 +44,37 @@ def crawl_feed(feed_dict, credentials):
     logger.info("starting search for %s", search_string)
     tweet_count = 0
 
-    for tweet in twarc.search(search_string):
-        with open(json_file, 'a') as json_out:
-            json_out.write("{}\n".format(json.dumps(tweet)))
+    if crawl_type == "timeline":
+        for tweet in twarc.timeline(screen_name=search_string):
+            with open(json_file, 'a') as json_out:
+                json_out.write("{}\n".format(json.dumps(tweet)))
 
-        if "id_str" in tweet:
-            logger.info("archived https://twitter.com/%s/status/%s", tweet['user']['screen_name'], tweet["id_str"])
-        elif 'limit' in tweet:
-            logger.warn("%s tweets undelivered", tweet["limit"]["track"])
-        elif 'warning' in tweet:
-            logger.warn(tweet['warning']['message'])
-        else:
-            logger.warn(json.dumps(tweet))
+            if "id_str" in tweet:
+                logger.info("archived https://twitter.com/%s/status/%s", tweet['user']['screen_name'], tweet["id_str"])
+            elif 'limit' in tweet:
+                logger.warn("%s tweets undelivered", tweet["limit"]["track"])
+            elif 'warning' in tweet:
+                logger.warn(tweet['warning']['message'])
+            else:
+                logger.warn(json.dumps(tweet))
 
-        tweet_count += 1
+            tweet_count += 1
+
+    else:
+        for tweet in twarc.search(search_string):
+            with open(json_file, 'a') as json_out:
+                json_out.write("{}\n".format(json.dumps(tweet)))
+
+            if "id_str" in tweet:
+                logger.info("archived https://twitter.com/%s/status/%s", tweet['user']['screen_name'], tweet["id_str"])
+            elif 'limit' in tweet:
+                logger.warn("%s tweets undelivered", tweet["limit"]["track"])
+            elif 'warning' in tweet:
+                logger.warn(tweet['warning']['message'])
+            else:
+                logger.warn(json.dumps(tweet))
+
+            tweet_count += 1
 
     if tweet_count == 0:
         logger.info("no new tweets matching %s", search_string)

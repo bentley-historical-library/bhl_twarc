@@ -22,6 +22,8 @@ def build_html_for_feed(feed_dict):
         html_title = search_string + ' Tweets'
     elif crawl_type == 'mentions':
         html_title = search_string + ' Twitter Mentions'
+    elif crawl_type == "timeline":
+        html_title = search_string + ' Timeline'
 
     crawl_time_html = feed_dict['crawl_time_html']
 
