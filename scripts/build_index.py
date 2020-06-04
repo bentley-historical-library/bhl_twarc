@@ -10,7 +10,7 @@ def build_index_for_feed(feed_dict):
     crawl_type = feed_dict['crawl_type']
     short_name = feed_dict['short_name']
 
-    header_types = {'mentions': 'Twitter Mentions', 'hashtag': 'Tweets', 'user': 'Tweets'}
+    header_types = {'mentions': 'Twitter Mentions', 'hashtag': 'Tweets', 'user': 'Tweets', 'timeline': 'Timeline'}
     header_text = crawl_name + ' ' + header_types[crawl_type]
 
     index = join(feed_dir, 'index.html')
